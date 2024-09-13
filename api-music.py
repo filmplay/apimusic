@@ -14,7 +14,10 @@ def baixar_musica(url):
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'noplaylist': True
+        'noplaylist': True,
+        'headers': {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -40,4 +43,5 @@ def download_audio():
 if __name__ == '__main__':
     if not os.path.exists('downloads'):
         os.makedirs('downloads')
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
