@@ -18,7 +18,7 @@ def baixar_musica(url):
         'headers': {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         },
-        'proxy': '131.100.148.76:8080'  # Substitua pelo endereço do seu proxy
+        'cookiefile': 'cookies.txt'  # Substitua pelo caminho para o arquivo de cookies
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
